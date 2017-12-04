@@ -17,21 +17,23 @@ section .text
 _ft_isalpha:
 	push rbp
 	mov rbp, rsp
+	mov rax, 1
 	cmp rdi, 65
 	jl false
 	cmp rdi, 122
 	jg false
 	cmp rdi, 90
 	jg in_range
-	mov rax, 1
-	leave
-	ret
+	jmp return
 
 in_range:
 	cmp rdi, 97
 	jl false
+	jmp return
 
 false:
 	mov rax, 0
+
+return:
 	leave
 	ret
