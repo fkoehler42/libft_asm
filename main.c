@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/04 14:17:11 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/04 16:18:46 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	main(int ac, char **av)
 {
 	char	c1, c2, c3, c4, c5;
 
-	c1 = 0;
+	c1 = -30;
 	c2 = 127;
-	c3 = '5';
-	c4 = -5;
-	c5 = 'f';
+	c3 = 102;
+	c4 = 75;
+	c5 = 120;
 
 	printf("\n----- ft_isdigit -----\n");
 	ft_isdigit(c1) == isdigit(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
@@ -65,6 +65,20 @@ int	main(int ac, char **av)
 	ft_isalnum(c3) == isalnum(c3) ? OK_CHAR(c3) : ERROR_CHAR(c3);
 	ft_isalnum(c4) == isalnum(c4) ? OK_CHAR(c4) : ERROR_CHAR(c4);
 	ft_isalnum(c5) == isalnum(c5) ? OK_CHAR(c5) : ERROR_CHAR(c5);
+
+	printf("\n----- ft_toupper -----\n");
+	ft_toupper(c1) == toupper(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
+	ft_toupper(c2) == toupper(c2) ? OK_CHAR(c2) : ERROR_CHAR(c2);
+	ft_toupper(c3) == toupper(c3) ? OK_CHAR(c3) : ERROR_CHAR(c3);
+	ft_toupper(c4) == toupper(c4) ? OK_CHAR(c4) : ERROR_CHAR(c4);
+	ft_toupper(c5) == toupper(c5) ? OK_CHAR(c5) : ERROR_CHAR(c5);
+
+	printf("\n----- ft_tolower -----\n");
+	ft_tolower(c1) == tolower(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
+	ft_tolower(c2) == tolower(c2) ? OK_CHAR(c2) : ERROR_CHAR(c2);
+	ft_tolower(c3) == tolower(c3) ? OK_CHAR(c3) : ERROR_CHAR(c3);
+	ft_tolower(c4) == tolower(c4) ? OK_CHAR(c4) : ERROR_CHAR(c4);
+	ft_tolower(c5) == tolower(c5) ? OK_CHAR(c5) : ERROR_CHAR(c5);
 
 	return (0);
 }
