@@ -6,17 +6,12 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/04 11:27:52 by flav             ###   ########.fr       */
+/*   Updated: 2017/12/04 13:37:01 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-int	ft_isdigit(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
-int	ft_isalpha(int c);
-int	ft_isalnum(int c);
+#include "libft_asm.h"
 
 int	main(int ac, char **av)
 {

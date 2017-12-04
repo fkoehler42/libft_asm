@@ -27,7 +27,7 @@ _ft_isalpha:
 	leave
 	ret
 
-in_range
+in_range:
 	cmp rdi, 97
 	jl false
 

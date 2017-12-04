@@ -6,31 +6,48 @@
 #    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/30 18:19:45 by fkoehler          #+#    #+#              #
-#    Updated: 2017/11/30 18:23:13 by fkoehler         ###   ########.fr        #
+#    Updated: 2017/12/04 13:56:12 by fkoehler         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # FILES
 
-SRC =
+SRCS = ft_isalnum.s \
+	  ft_isalpha.s \
+	  ft_isascii.s \
+	  ft_isdigit.s \
+	  ft_isprint.s \
 
 NAME = libfts.a
+OBJS = $(SRCS:.s=.o)
+O2 = $(addprefix $(OPATH), $(OBJS))
 
 # DIRECTORIES
 
+vpath %.s src
+INC = includes/
+OPATH = obj/
+
 # COMPILATION
 
-CC = nasm
-FLAGS = -Wall -Werror -Wextra
+ASM = nasm
+FLAGS = -Wall -Werror -f macho64
 
 # PROCESS
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(O2)
+	@ar rc $(NAME) $(O2)
+	@ranlib $(NAME)
 	@echo "\033[0;34m$(NAME) compilation done !\033[0;m"
 
+$(OPATH)%.o: %.s
+	@$(ASM) $(FLAGS) $< -o $@
+
 clean:
+	@rm -f $(O2)
+	@echo "\033[0;34m$(NAME) object files deleted !\033[0;m"
 
 fclean: clean
 	@rm -f $(NAME)
