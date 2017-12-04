@@ -20,11 +20,11 @@ _ft_isalnum:
 	push rbp
 	mov rbp, rsp
 	call _ft_isalpha
-	cmp rax, 0
-	jg true
+	test rax, rax
+	jne true
 	call _ft_isdigit
-	cmp rax, 0
-	jg true
+	test rax, rax
+	jne true
 	mov rax, 0
 	leave
 	ret
