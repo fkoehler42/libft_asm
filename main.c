@@ -6,13 +6,15 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/06 16:26:26 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/06 17:14:09 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # define RED	"\033[0;31m"
 # define GREEN	"\033[0;32m"
 # define OFF	"\033[0;m"
+
+# define STRLEN 42
 
 #define OK_CHAR(c) printf("char = %-45c\t [%sOK%s]\n", c, GREEN, OFF)
 #define ERROR_CHAR(c) printf("char = %-45c\t [%sERROR%s]\n", c, RED, OFF)
@@ -30,12 +32,11 @@ int	main(int ac, char **av)
 	char	c1, c2, c3, c4, c5;
 	c1 = -30; c2 = 127; c3 = 102; c4 = 75; c5 = 120;
 
-	char	s1[40] = "Je";
+	char	s1[STRLEN] = "Je";
 	char	s2[] = " suis un poisson";
 	char	s3[] = " perdu dans l'ocean";
 	char	s4[] = "$$";
 	char	s5[] = "";
-
 	printf("\n----- ft_isdigit -----\n");
 	ft_isdigit(c1) == isdigit(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
 	ft_isdigit(c2) == isdigit(c2) ? OK_CHAR(c2) : ERROR_CHAR(c2);
@@ -97,6 +98,12 @@ int	main(int ac, char **av)
 	STR(ft_strcat(s1, s3));
 	STR(ft_strcat(s1, s4));
 	STR(ft_strcat(s1, s5));
+
+	printf("\n----- ft_bzero -----\n");
+	ft_bzero(s1, 0);STR(s1);
+	ft_bzero(s1, 1);STR(s1);STR(&s1[1]);s1[0] = 'j';
+	ft_bzero(&s1[ft_strlen(s1) - 2], 2);STR(s1);
+	ft_bzero(s1, STRLEN);STR(s1);
 
 	return (0);
 }

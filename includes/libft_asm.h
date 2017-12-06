@@ -6,12 +6,14 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 13:35:00 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/06 11:53:07 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/06 16:34:12 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_ASM_H
 # define LIBFT_ASM_H
+
+void	ft_bzero(void *s, size_t n);
 
 int		ft_isdigit(int c);
 int		ft_isascii(int c);
