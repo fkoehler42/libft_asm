@@ -6,7 +6,7 @@
 #    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/30 18:19:45 by fkoehler          #+#    #+#              #
-#    Updated: 2017/12/04 17:21:01 by fkoehler         ###   ########.fr        #
+#    Updated: 2017/12/06 11:52:00 by fkoehler         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS = ft_isalnum.s \
 	  ft_isascii.s \
 	  ft_isdigit.s \
 	  ft_isprint.s \
+	  ft_strcat.s \
 	  ft_strlen.s \
 	  ft_tolower.s \
 	  ft_toupper.s
