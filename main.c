@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/06 17:14:09 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/06 19:12:50 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,12 @@ int	main(int ac, char **av)
 	ft_bzero(s1, 1);STR(s1);STR(&s1[1]);s1[0] = 'j';
 	ft_bzero(&s1[ft_strlen(s1) - 2], 2);STR(s1);
 	ft_bzero(s1, STRLEN);STR(s1);
+
+	printf("\n----- ft_memset -----\n");
+	STR(ft_memset(s1, 'a', 0));
+	STR(ft_memset(s1, 'a', 10));
+	STR(ft_memset(s1, 'a', -30));
+
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 13:35:00 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/06 16:34:12 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/06 17:36:33 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_ASM_H
 
 void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
 
 int		ft_isdigit(int c);
 int		ft_isascii(int c);
