@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/04 19:04:32 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/06 11:29:54 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define GREEN	"\033[0;32m"
 # define OFF	"\033[0;m"
 
-#define OK_CHAR(c) printf("char = %2c\t [%sOK%s]\n", c, GREEN, OFF)
-#define ERROR_CHAR(c) printf("char = %2c\t [%sERROR%s]\n", c, RED, OFF)
+#define OK_CHAR(c) printf("char = %-15c\t [%sOK%s]\n", c, GREEN, OFF)
+#define ERROR_CHAR(c) printf("char = %-15c\t [%sERROR%s]\n", c, RED, OFF)
+#define OK_STR(s) printf("str = %-15s\t [%sOK%s]\n", s, GREEN, OFF)
+#define ERROR_STR(s) printf("str = %-15s\t [%sERROR%s]\n", s, RED, OFF)
 
 #include <string.h>
 #include <ctype.h>
@@ -25,14 +27,14 @@
 int	main(int ac, char **av)
 {
 	char	c1, c2, c3, c4, c5;
-	char	s1[] = "Testing";
-	char	*s2 = NULL;
+	char	*s1, *s2, *s3, *s4, *s5;
 
-	c1 = -30;
-	c2 = 127;
-	c3 = 102;
-	c4 = 75;
-	c5 = 120;
+	c1 = -30; c2 = 127; c3 = 102; c4 = 75; c5 = 120;
+	s1 = "";
+	s2 = "Hello World!";
+	s3 = "Hello\0World!";
+	s4 = "0123456789";
+	s5 = "  \t   \  $   ";
 
 	printf("\n----- ft_isdigit -----\n");
 	ft_isdigit(c1) == isdigit(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
@@ -84,15 +86,11 @@ int	main(int ac, char **av)
 	ft_tolower(c5) == tolower(c5) ? OK_CHAR(c5) : ERROR_CHAR(c5);
 
 	printf("\n----- ft_strlen -----\n");
-	/* ft_strlen(c1) == strlen(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1); */
-	/* ft_strlen(c2) == strlen(c2) ? OK_CHAR(c2) : ERROR_CHAR(c2); */
-	/* ft_strlen(c3) == strlen(c3) ? OK_CHAR(c3) : ERROR_CHAR(c3); */
-	/* ft_strlen(c4) == strlen(c4) ? OK_CHAR(c4) : ERROR_CHAR(c4); */
-	/* ft_strlen(c5) == strlen(c5) ? OK_CHAR(c5) : ERROR_CHAR(c5); */
-	printf("strlen  of s1-> %lu\n", strlen(s1));
-	printf("ft_strlen of s1-> %lu\n", ft_strlen(s1));
-	printf("strlen  of s2-> %lu\n", strlen(s2));
-	printf("ft_strlen of s2-> %lu\n", ft_strlen(s2));
+	ft_strlen(s1) == strlen(s1) ? OK_STR(s1) : ERROR_STR(s1);
+	ft_strlen(s2) == strlen(s2) ? OK_STR(s2) : ERROR_STR(s2);
+	ft_strlen(s3) == strlen(s3) ? OK_STR(s3) : ERROR_STR(s3);
+	ft_strlen(s4) == strlen(s4) ? OK_STR(s4) : ERROR_STR(s4);
+	ft_strlen(s5) == strlen(s5) ? OK_STR(s5) : ERROR_STR(s5);
 
 	return (0);
 }
