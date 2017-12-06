@@ -6,7 +6,7 @@
 ;    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2017/12/01 16:56:38 by fkoehler          #+#    #+#              ;
-;    Updated: 2017/12/06 13:43:54 by fkoehler         ###   ########.fr        ;
+;    Updated: 2017/12/06 16:24:48 by fkoehler         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -19,20 +19,22 @@ _ft_strcat:
 	push rbp
 	mov rbp, rsp
 	push rdi
+	mov rbx, rdi
+	mov rcx, rsi
 	call _ft_strlen
-	add rdi, rax
+	add rbx, rax
 
-looping:
-	cmp byte [rsi], 0
+append:
+	cmp byte[rcx], 0
 	je end
-	mov al, [rsi]
-	mov [rdi], al
-	inc rdi
-	inc rsi
-	jmp looping
+	mov al, byte[rcx] ; copy to a one-byte register as tmp
+	mov byte[rbx], al
+	inc rbx
+	inc rcx
+	jmp append
 
 end:
-	mov byte [rdi], 0
+	mov byte[rbx], 0
 	pop rax
 	leave
 	ret

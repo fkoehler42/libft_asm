@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/06 13:24:40 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/06 16:26:26 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 # define GREEN	"\033[0;32m"
 # define OFF	"\033[0;m"
 
-#define OK_CHAR(c) printf("char = %-15c\t [%sOK%s]\n", c, GREEN, OFF)
-#define ERROR_CHAR(c) printf("char = %-15c\t [%sERROR%s]\n", c, RED, OFF)
-#define OK_STR(s) printf("str = \"%-15s\"\t [%sOK%s]\n", s, GREEN, OFF)
-#define ERROR_STR(s) printf("str = \"%-15s\"\t [%sERROR%s]\n", s, RED, OFF)
+#define OK_CHAR(c) printf("char = %-45c\t [%sOK%s]\n", c, GREEN, OFF)
+#define ERROR_CHAR(c) printf("char = %-45c\t [%sERROR%s]\n", c, RED, OFF)
+#define STR(s) printf("str = \"%s\"\n", s)
+#define OK_STR(s) printf("str = \"%s\"%*c\t [%sOK%s]\n", s, (int)(45 - strlen(s)), ' ', GREEN, OFF)
+#define ERROR_STR(s) printf("str = \"%s\"%*c\t [%sERROR%s]\n", s, (int)(45 - strlen(s)), ' ', RED, OFF)
 
 #include <string.h>
 #include <ctype.h>
@@ -29,11 +30,11 @@ int	main(int ac, char **av)
 	char	c1, c2, c3, c4, c5;
 	c1 = -30; c2 = 127; c3 = 102; c4 = 75; c5 = 120;
 
-	char	s1[] = "";
-	char	s2[] = "Hello World!";
-	char	s3[] = "Hello\0World!";
-	char	s4[30] = "YO ";
-	char	s5[] = "  \t   \  $   ";
+	char	s1[40] = "Je";
+	char	s2[] = " suis un poisson";
+	char	s3[] = " perdu dans l'ocean";
+	char	s4[] = "$$";
+	char	s5[] = "";
 
 	printf("\n----- ft_isdigit -----\n");
 	ft_isdigit(c1) == isdigit(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
@@ -92,8 +93,10 @@ int	main(int ac, char **av)
 	ft_strlen(s5) == strlen(s5) ? OK_STR(s5) : ERROR_STR(s5);
 
 	printf("\n----- ft_strcat -----\n");
-	printf("str = \"%-15s\"\n", ft_strcat(s4, "les aminches "));
-	printf("str = \"%-15s\"\n", ft_strcat(s4, s2));
+	STR(ft_strcat(s1, s2));
+	STR(ft_strcat(s1, s3));
+	STR(ft_strcat(s1, s4));
+	STR(ft_strcat(s1, s5));
 
 	return (0);
 }

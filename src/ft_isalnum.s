@@ -6,7 +6,7 @@
 ;    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2017/12/01 16:56:38 by fkoehler          #+#    #+#              ;
-;    Updated: 2017/12/04 11:19:34 by flav             ###   ########.fr        ;
+;    Updated: 2017/12/06 15:41:29 by fkoehler         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -20,7 +20,7 @@ _ft_isalnum:
 	push rbp
 	mov rbp, rsp
 	call _ft_isalpha
-	test rax, rax
+	test rax, rax ; AND operation (faster than cmp, res = zero if operand == zero)
 	jne true
 	call _ft_isdigit
 	test rax, rax
