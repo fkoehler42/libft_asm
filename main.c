@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/07 16:51:47 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/07 19:59:12 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 # define OFF	"\033[0;m"
 
 # define STRLEN 42
-#define OK printf("", GREEN, )
-#define OK_CHAR(c) printf("char = %-45c\t [%sOK%s]\n", c, GREEN, OFF)
-#define ERROR_CHAR(c) printf("char = %-45c\t [%sERROR%s]\n", c, RED, OFF)
+#define OK printf("[%sOK%s]\n", GREEN, OFF)
+#define ERROR printf("[%sERROR%s]\n", RED, OFF)
+#define OK_CHAR(c) printf("char = %-45c\t[%sOK%s]\n", c, GREEN, OFF)
+#define ERROR_CHAR(c) printf("char = %-45c\t[%sERROR%s]\n", c, RED, OFF)
 #define STR(s) printf("str = \"%s\"\n", s)
-#define OK_STR(s) printf("str = \"%s\"%*c\t [%sOK%s]\n", s, (int)(45 - strlen(s)), ' ', GREEN, OFF)
-#define ERROR_STR(s) printf("str = \"%s\"%*c\t [%sERROR%s]\n", s, (int)(45 - strlen(s)), ' ', RED, OFF)
+#define OK_STR(s) printf("str = \"%s\"%*c\t[%sOK%s]\n", s, (int)(45 - strlen(s)), ' ', GREEN, OFF)
+#define ERROR_STR(s) printf("str = \"%s\"%*c\t[%sERROR%s]\n", s, (int)(45 - strlen(s)), ' ', RED, OFF)
 
 #include <string.h>
 #include <ctype.h>
@@ -108,13 +109,13 @@ int	main(int ac, char **av)
 	printf("\n----- ft_memset -----\n");
 	STR(ft_memset(s1, 'a', 0));
 	STR(ft_memset(s1, 'a', 10));
-	STR(ft_memset(s1, 'a', 30));
+	STR(ft_memset(s1, '$', 30));
 
 	printf("\n----- ft_puts -----\n");
-	ft_puts(s1) == puts(s1) ? OK_STR(s1) : ERROR_STR(s1);
-	ft_puts(s2) == puts(s2) ? OK_STR(s2) : ERROR_STR(s2);
-	ft_puts(s5) == puts(s5) ? OK_STR(s5) : ERROR_STR(s5);
-	ft_puts(NULL) == puts(NULL) ? OK_STR(s1) : ERROR_STR(s1);
+	ft_puts(s1) == puts(s1) ? OK : ERROR;
+	ft_puts(s2) == puts(s2) ? OK : ERROR;
+	ft_puts(s5) == puts(s5) ? OK : ERROR;
+	ft_puts(NULL) == puts(NULL) ? OK : ERROR;
 
 	return (0);
 }
