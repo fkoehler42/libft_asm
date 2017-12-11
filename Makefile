@@ -6,13 +6,14 @@
 #    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/30 18:19:45 by fkoehler          #+#    #+#              #
-#    Updated: 2017/12/11 14:06:27 by fkoehler         ###   ########.fr        #
+#    Updated: 2017/12/11 16:53:33 by fkoehler         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # FILES
 
 SRCS = ft_bzero.s \
+	ft_cat.s \
 	ft_isalnum.s \
 	ft_isalpha.s \
 	ft_isascii.s \

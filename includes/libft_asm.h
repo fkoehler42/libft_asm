@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 13:35:00 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/11 16:38:52 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/11 16:53:21 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strdup(const char *s1);
 
 int		ft_puts(const char *s);
+void	ft_cat(int fd);
 
 #endif
