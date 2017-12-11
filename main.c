@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/11 16:45:37 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/11 18:01:22 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,12 @@ int	main(int ac, char **av)
 	allocated = strdup(s2);STR(s2);free(allocated);
 	allocated = strdup(s3);STR(s3);free(allocated);
 	allocated = strdup(s4);STR(s4);free(allocated);
+
+	printf("\n----- ft_strchr -----\n");
+	STR(ft_strchr(s2, ' '));
+	STR(ft_strchr(s2, 'o'));
+	STR(ft_strchr(s2, 0));
+	STR(ft_strchr(s2, 'z'));
 
 	return (0);
 }
