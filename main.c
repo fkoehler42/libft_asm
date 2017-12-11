@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/11 18:01:22 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/11 19:38:46 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ int	main(int ac, char **av)
 	ft_bzero(s1, 0);STR(s1);
 	ft_bzero(s1, 1);STR(s1);STR(&s1[1]);s1[0] = 'j';
 	ft_bzero(&s1[ft_strlen(s1) - 2], 2);STR(s1);
-	ft_bzero(s1, STRLEN);STR(s1);
 
 	printf("\n----- ft_memset -----\n");
 	STR(ft_memset(s1, 'a', 0));
@@ -122,7 +121,7 @@ int	main(int ac, char **av)
 	ft_memcpy(s1, "Je", 0);STR(s1);
 	ft_memcpy(s1, "Je", 2);STR(s1);
 	ft_memcpy(&s1[2], s2, ft_strlen(s2));STR(s1);
-	ft_memcpy(s1, "", STRLEN);STR(s1);
+	ft_memcpy(s1, "", STRLEN + 1);STR(s1);
 
 	printf("\n----- ft_strdup -----\n");
 	char *allocated = NULL;
@@ -131,11 +130,18 @@ int	main(int ac, char **av)
 	allocated = strdup(s3);STR(s3);free(allocated);
 	allocated = strdup(s4);STR(s4);free(allocated);
 
+	printf("\n\n////////// BONUS PART \\\\\\\\\\\\\\\\\\\\\n");
 	printf("\n----- ft_strchr -----\n");
 	STR(ft_strchr(s2, ' '));
 	STR(ft_strchr(s2, 'o'));
 	STR(ft_strchr(s2, 0));
 	STR(ft_strchr(s2, 'z'));
+
+	printf("\n----- ft_puts_fd -----\n");
+	ft_puts_fd("Je", 2);
+	ft_puts_fd(s2, 2);
+	ft_puts_fd(s3, 2);
+	ft_puts_fd(NULL, 2);
 
 	return (0);
 }
