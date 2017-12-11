@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/11 14:04:21 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/11 16:45:37 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #define ERROR_STR(s) printf("str = \"%s\"%*c\t[%sERROR%s]\n", s, (int)(45 - strlen(s)), ' ', RED, OFF)
 
 #include <string.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <stdio.h>
 #include "libft_asm.h"
@@ -122,6 +123,13 @@ int	main(int ac, char **av)
 	ft_memcpy(s1, "Je", 2);STR(s1);
 	ft_memcpy(&s1[2], s2, ft_strlen(s2));STR(s1);
 	ft_memcpy(s1, "", STRLEN);STR(s1);
+
+	printf("\n----- ft_strdup -----\n");
+	char *allocated = NULL;
+	allocated = strdup(s1);STR(s1);free(allocated);
+	allocated = strdup(s2);STR(s2);free(allocated);
+	allocated = strdup(s3);STR(s3);free(allocated);
+	allocated = strdup(s4);STR(s4);free(allocated);
 
 	return (0);
 }
