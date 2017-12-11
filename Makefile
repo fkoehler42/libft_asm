@@ -6,7 +6,7 @@
 #    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/30 18:19:45 by fkoehler          #+#    #+#              #
-#    Updated: 2017/12/07 15:01:59 by fkoehler         ###   ########.fr        #
+#    Updated: 2017/12/11 13:42:20 by fkoehler         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS = ft_bzero.s \
 	ft_isascii.s \
 	ft_isdigit.s \
 	ft_isprint.s \
+	ft_memcpy.s \
 	ft_memset.s \
 	ft_puts.s \
 	ft_strcat.s \

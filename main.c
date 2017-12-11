@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/07 19:59:12 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/11 14:04:21 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,12 @@ int	main(int ac, char **av)
 	STR(ft_strcat(s1, s4));
 	STR(ft_strcat(s1, s5));
 
+	printf("\n----- ft_puts -----\n");
+	ft_puts(s1) == puts(s1) ? OK : ERROR;
+	ft_puts(s2) == puts(s2) ? OK : ERROR;
+	ft_puts(s5) == puts(s5) ? OK : ERROR;
+	ft_puts(NULL) == puts(NULL) ? OK : ERROR;
+
 	printf("\n----- ft_bzero -----\n");
 	ft_bzero(s1, 0);STR(s1);
 	ft_bzero(s1, 1);STR(s1);STR(&s1[1]);s1[0] = 'j';
@@ -111,11 +117,11 @@ int	main(int ac, char **av)
 	STR(ft_memset(s1, 'a', 10));
 	STR(ft_memset(s1, '$', 30));
 
-	printf("\n----- ft_puts -----\n");
-	ft_puts(s1) == puts(s1) ? OK : ERROR;
-	ft_puts(s2) == puts(s2) ? OK : ERROR;
-	ft_puts(s5) == puts(s5) ? OK : ERROR;
-	ft_puts(NULL) == puts(NULL) ? OK : ERROR;
+	printf("\n----- ft_memcpy -----\n");
+	ft_memcpy(s1, "Je", 0);STR(s1);
+	ft_memcpy(s1, "Je", 2);STR(s1);
+	ft_memcpy(&s1[2], s2, ft_strlen(s2));STR(s1);
+	ft_memcpy(s1, "", STRLEN);STR(s1);
 
 	return (0);
 }
