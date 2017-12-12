@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/12 12:30:07 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/12 22:24:17 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #define OK_STR(s) printf("str = \"%s\"%*c\t[%sOK%s]\n", s, (int)(45 - strlen(s)), ' ', GREEN, OFF)
 #define ERROR_STR(s) printf("str = \"%s\"%*c\t[%sERROR%s]\n", s, (int)(45 - strlen(s)), ' ', RED, OFF)
 
+#include <limits.h>
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -34,11 +35,15 @@ int	main(int ac, char **av)
 	char	c1, c2, c3, c4, c5;
 	c1 = -30; c2 = 127; c3 = 102; c4 = 75; c5 = 120;
 
+	int n1, n2, n3, n4, n5;
+	n1 = 0; n2 = 24; n3 = -8237; n4 = INT_MAX; n5 = INT_MIN;
+
 	char	s1[STRLEN] = "Je";
 	char	s2[] = " suis un poisson";
 	char	s3[] = " perdu dans l'ocean";
 	char	s4[] = "$$";
 	char	s5[] = "";
+
 	printf("\n----- ft_isdigit -----\n");
 	ft_isdigit(c1) == isdigit(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
 	ft_isdigit(c2) == isdigit(c2) ? OK_CHAR(c2) : ERROR_CHAR(c2);
@@ -150,6 +155,18 @@ int	main(int ac, char **av)
 	ft_strcmp(s4, s2) == strcmp(s4, s2) ? OK_STR(s4) : ERROR_STR(s4);
 	ft_strcmp(s3, s3) == strcmp(s3, s3) ? OK_STR(s3) : ERROR_STR(s3);
 	ft_strcmp(s5, s4) == strcmp(s5, s4) ? OK_STR(s5) : ERROR_STR(s5);
+
+	printf("\n----- ft_putnbr -----\n");
+	ft_putnbr(n1);
+	putchar('\n');
+	ft_putnbr(n2);
+	putchar('\n');
+	ft_putnbr(n3);
+	putchar('\n');
+	ft_putnbr(n4);
+	putchar('\n');
+	ft_putnbr(n5);
+	putchar('\n');
 
 	return (0);
 }
