@@ -6,7 +6,7 @@
 ;    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2017/12/06 16:35:47 by fkoehler          #+#    #+#              ;
-;    Updated: 2017/12/06 16:52:07 by fkoehler         ###   ########.fr        ;
+;    Updated: 2017/12/12 19:29:16 by fkoehler         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -24,7 +24,7 @@ _ft_bzero:
 looping:
 	mov byte[rdi], 0
 	inc rdi
-	loop looping
+	loop looping ; while rcx > 0 (auto decrement)
 
 return:
 	leave
