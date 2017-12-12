@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/11 19:38:46 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/12 12:23:08 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,13 @@ int	main(int ac, char **av)
 	ft_puts_fd(s2, 2);
 	ft_puts_fd(s3, 2);
 	ft_puts_fd(NULL, 2);
+
+	printf("\n----- ft_strcmp -----\n");
+	ft_strcmp(s1, s2) == strcmp(s1, s2) ? OK_STR(s1) : ERROR_STR(s1);
+	ft_strcmp(s2, s3) == strcmp(s2, s3) ? OK_STR(s2) : ERROR_STR(s2);
+	ft_strcmp(s3, s4) == strcmp(s3, s4) ? OK_STR(s3) : ERROR_STR(s3);
+	ft_strcmp(s4, s2) == strcmp(s4, s2) ? OK_STR(s4) : ERROR_STR(s4);
+	ft_strcmp(s5, s4) == strcmp(s5, s4) ? OK_STR(s5) : ERROR_STR(s5);
 
 	return (0);
 }

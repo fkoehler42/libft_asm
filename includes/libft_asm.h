@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 13:35:00 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/11 19:28:39 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/12 10:53:23 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 size_t	ft_strlen(const char *s);
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
