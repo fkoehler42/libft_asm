@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/12 22:24:17 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/13 20:03:13 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 
 int	main(int ac, char **av)
 {
-	char	c1, c2, c3, c4, c5;
+	int	c1, c2, c3, c4, c5;
 	c1 = -30; c2 = 127; c3 = 102; c4 = 75; c5 = 120;
 
 	int n1, n2, n3, n4, n5;
@@ -130,10 +130,10 @@ int	main(int ac, char **av)
 
 	printf("\n----- ft_strdup -----\n");
 	char *allocated = NULL;
-	allocated = strdup(s1);STR(s1);free(allocated);
-	allocated = strdup(s2);STR(s2);free(allocated);
-	allocated = strdup(s3);STR(s3);free(allocated);
-	allocated = strdup(s4);STR(s4);free(allocated);
+	allocated = ft_strdup(s1);STR(allocated);free(allocated);
+	allocated = ft_strdup(s2);STR(allocated);free(allocated);
+	allocated = ft_strdup(s3);STR(allocated);free(allocated);
+	allocated = ft_strdup(s4);STR(allocated);free(allocated);
 
 	printf("\n\n////////// BONUS PART \\\\\\\\\\\\\\\\\\\\\n");
 	printf("\n----- ft_strchr -----\n");
@@ -155,6 +155,14 @@ int	main(int ac, char **av)
 	ft_strcmp(s4, s2) == strcmp(s4, s2) ? OK_STR(s4) : ERROR_STR(s4);
 	ft_strcmp(s3, s3) == strcmp(s3, s3) ? OK_STR(s3) : ERROR_STR(s3);
 	ft_strcmp(s5, s4) == strcmp(s5, s4) ? OK_STR(s5) : ERROR_STR(s5);
+
+	printf("\n----- ft_strjoin -----\n");
+	char *allocated2 = NULL;
+	allocated = ft_strjoin("Je suis un poisson", s3);STR(allocated);
+	allocated2 = ft_strjoin(allocated, s4);STR(allocated2);free(allocated);
+	allocated = ft_strjoin("", s4);STR(allocated);free(allocated2);
+	allocated2 = ft_strjoin("VOID", NULL);STR(allocated2);free(allocated);
+	allocated = ft_strjoin("", "");STR(allocated);free(allocated2);free(allocated);
 
 	printf("\n----- ft_putnbr -----\n");
 	ft_putnbr(n1);
