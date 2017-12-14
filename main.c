@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/14 15:37:44 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/14 17:41:43 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ int	main(int ac, char **av)
 	printf("\n\n////////// BONUS PART \\\\\\\\\\\\\\\\\\\\\n");
 	printf("\n----- ft_isspace -----\n");
 	ft_isspace(c1) == isspace(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
-	ft_isspace(c2) == isspace(c2) ? OK_CHAR(c2) : ERROR_CHAR(c2);
+	ft_isspace(c4) == isspace(c4) ? OK_CHAR(c4) : ERROR_CHAR(c4);
 	ft_isspace(' ') == isspace(' ') ? OK_CHAR(' ') : ERROR_CHAR(' ');
 	ft_isspace('\v') == isspace('\v') ? OK_CHAR('\v') : ERROR_CHAR('\v');
 	ft_isspace('\n') == isspace('\n') ? OK_CHAR('\n') : ERROR_CHAR('\n');

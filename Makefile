@@ -6,7 +6,7 @@
 #    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/30 18:19:45 by fkoehler          #+#    #+#              #
-#    Updated: 2017/12/14 15:03:23 by fkoehler         ###   ########.fr        #
+#    Updated: 2017/12/14 18:12:29 by fkoehler         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ OPATH = obj/
 # COMPILATION
 
 ASM = nasm
-FLAGS = -Wall -Werror -f macho64
+FLAGS = -f macho64
 
 # PROCESS
 

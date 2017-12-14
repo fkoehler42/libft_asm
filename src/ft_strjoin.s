@@ -6,7 +6,7 @@
 ;    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2017/12/13 17:36:01 by fkoehler          #+#    #+#              ;
-;    Updated: 2017/12/13 20:00:01 by fkoehler         ###   ########.fr        ;
+;    Updated: 2017/12/14 17:40:43 by fkoehler         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -19,7 +19,7 @@ section .text
 _ft_strjoin:
 	push rbp
 	mov rbp, rsp
-	mov rax, 0 ; default ret value (error cases)
+	xor rax, rax ; default ret value (error cases)
 	test rdi, rdi
 	jz return
 	test rsi, rsi
@@ -37,22 +37,26 @@ _ft_strjoin:
 	inc rdi ; joined str total len ('\0' included)
 	push r8
 	push r9
+	push rsp
+	and rsp, 0xFFFFFFFFFFFFFFF0 ; manual 16 byte stack alignment
 	call _malloc
+	pop rsp
 	pop r9
 	pop r8
 	test rax, rax ; malloc error check
 	jz return
 
 copy_strs:
-	cld
 	pop rcx
 	mov byte[rax + rcx], 0 ; null terminating '\0'
 	mov rdi, rax ; new str
 	pop rsi ; s1
 	mov rcx, r8 ; s1 len
+	cld
 	rep movsb
 	pop rsi ; s2
 	mov rcx, r9 ; s2 len
+	cld
 	rep movsb
 
 return:
