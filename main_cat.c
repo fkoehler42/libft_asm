@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 12:42:34 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/14 14:51:33 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/14 18:18:33 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	int i = 1;
 	int fd;
 
-	if (!av[i])
+	if (ac < 2)
 		return (0);
 	if (av[i][0] == '0' && !av[i][1])
 		ft_cat(0);
