@@ -6,7 +6,7 @@
 /*   By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 17:35:31 by fkoehler          #+#    #+#             */
-/*   Updated: 2017/12/13 20:03:13 by fkoehler         ###   ########.fr       */
+/*   Updated: 2017/12/14 15:37:44 by fkoehler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,11 +136,22 @@ int	main(int ac, char **av)
 	allocated = ft_strdup(s4);STR(allocated);free(allocated);
 
 	printf("\n\n////////// BONUS PART \\\\\\\\\\\\\\\\\\\\\n");
+	printf("\n----- ft_isspace -----\n");
+	ft_isspace(c1) == isspace(c1) ? OK_CHAR(c1) : ERROR_CHAR(c1);
+	ft_isspace(c2) == isspace(c2) ? OK_CHAR(c2) : ERROR_CHAR(c2);
+	ft_isspace(' ') == isspace(' ') ? OK_CHAR(' ') : ERROR_CHAR(' ');
+	ft_isspace('\v') == isspace('\v') ? OK_CHAR('\v') : ERROR_CHAR('\v');
+	ft_isspace('\n') == isspace('\n') ? OK_CHAR('\n') : ERROR_CHAR('\n');
+	ft_isspace('\f') == isspace('\f') ? OK_CHAR('\f') : ERROR_CHAR('\f');
+	ft_isspace('\t') == isspace('\t') ? OK_CHAR('\t') : ERROR_CHAR('\t');
+	ft_isspace('\r') == isspace('\r') ? OK_CHAR('\r') : ERROR_CHAR('\r');
+
 	printf("\n----- ft_strchr -----\n");
 	STR(ft_strchr(s2, ' '));
 	STR(ft_strchr(s2, 'o'));
 	STR(ft_strchr(s2, 0));
 	STR(ft_strchr(s2, 'z'));
+	STR(ft_strchr("", 'a'));
 
 	printf("\n----- ft_puts_fd -----\n");
 	ft_puts_fd("Je", 2);
