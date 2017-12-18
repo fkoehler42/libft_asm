@@ -6,7 +6,7 @@
 ;    By: fkoehler <fkoehler@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2017/12/11 16:54:14 by fkoehler          #+#    #+#              ;
-;    Updated: 2017/12/14 14:50:05 by fkoehler         ###   ########.fr        ;
+;    Updated: 2017/12/18 13:01:25 by fkoehler         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -35,6 +35,7 @@ read:
 	mov rdx, BUFF_SIZE
 	mov rax, SYSCALL(READ)
 	syscall
+	jc return
 	cmp rax, 0
 	jle return
 
@@ -43,6 +44,7 @@ write:
 	mov rdx, rax
 	mov rax, SYSCALL(WRITE)
 	syscall
+	jc return
 	cmp rax, 0
 	jl return
 	pop rdi
